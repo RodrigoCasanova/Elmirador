@@ -1,0 +1,115 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto; /* Centra el contenido horizontalmente */
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-container {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+  width: 100%;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  opacity: 0.9;
+}
+
+.list-title {
+  text-align: center;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.gastos-list {
+  list-style-type: none;
+  padding: 0;
+
+  .gasto-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+
+    span {
+      margin: 2px 0;
+    }
+  }
+}
+
+.no-data {
+  font-style: italic;
+  color: #888;
+  text-align: center;
+}
+.btn-home {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 15px;
+  text-align: center;
+  background-color: #28a745;
+  color: white;
+  border-radius: 4px;
+  font-size: 16px;
+  text-decoration: none;
+  width: 100%;
+  max-width: 200px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-home:hover {
+  background-color: #218838;
+  color: white;
+  text-decoration: none;
+}
+

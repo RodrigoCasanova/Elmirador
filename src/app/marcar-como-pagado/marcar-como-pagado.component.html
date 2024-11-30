@@ -1,0 +1,36 @@
+<div class="container">
+    <h2>Marcar Gasto Común como Pagado</h2>
+    
+    <!-- Mensajes de éxito o error -->
+    <div *ngIf="mensaje" class="alert alert-success">
+      {{ mensaje }}
+    </div>
+    <div *ngIf="error" class="alert alert-danger">
+      {{ error }}
+    </div>
+    
+    <form (ngSubmit)="marcarComoPagado()">
+      <div class="form-group">
+        <label for="CodDepto">Código de Departamento:</label>
+        <input type="text" id="CodDepto" class="form-control" [(ngModel)]="CodDepto" name="CodDepto" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="mes">Mes:</label>
+        <input type="number" id="mes" class="form-control" [(ngModel)]="mes" name="mes" min="1" max="12" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="anio">Año:</label>
+        <input type="number" id="anio" class="form-control" [(ngModel)]="anio" name="anio" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="fecha_pago">Fecha de Pago:</label>
+        <input type="date" id="fecha_pago" class="form-control" [(ngModel)]="fecha_pago" name="fecha_pago" required>
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Marcar como Pagado</button>
+    </form>
+  </div>
+  

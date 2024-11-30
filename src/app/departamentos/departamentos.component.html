@@ -1,0 +1,41 @@
+<div class="container">
+  <h2 class="page-title">Departamentos</h2>
+
+  <div class="table-wrapper">
+    <table class="departamentos-table">
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Piso</th>
+          <th>Número</th>
+          <th>Arrendado</th>
+          <th>RutProp</th>
+          <th>Estado</th>
+          <th>RutArre</th>
+          <th>FechaIniC</th>
+          <th>FechaFinC</th>
+          <th>Observacion</th>
+          <th>NumHab</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let depto of departamentos">
+          <td>{{ depto.CodDepto }}</td>
+          <td>{{ depto.Piso }}</td>
+          <td>{{ depto.Numero }}</td>
+          <td>{{ depto.Arrendado }}</td>
+          <td>{{ depto.RutProp }}</td>
+          <td>{{ depto.Estado }}</td>
+          <td>{{ depto.RutArre }}</td>
+          <td>{{ depto.FechaIniC }}</td>
+          <td>{{ depto.FechaFinC }}</td>
+          <td>{{ depto.Observacion }}</td>
+          <td>{{ depto.NumHab }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Botón para regresar al Home -->
+  <a routerLink="/home" class="btn-home">Ir al Home</a>
+</div>

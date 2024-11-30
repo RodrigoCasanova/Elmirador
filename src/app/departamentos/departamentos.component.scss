@@ -1,0 +1,70 @@
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px;
+  font-family: 'Arial', sans-serif;
+}
+
+.page-title {
+  text-align: center;
+  color: #007bff;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.table-wrapper {
+  overflow-x: auto; /* Hace que la tabla sea desplazable en pantallas pequeñas */
+  margin-top: 20px;
+}
+
+.departamentos-table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 0 auto; /* Esto centra la tabla dentro de su contenedor */
+}
+
+.departamentos-table th,
+.departamentos-table td {
+  padding: 12px 20px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.departamentos-table th {
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+}
+
+.departamentos-table td {
+  font-size: 14px;
+}
+
+.departamentos-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.departamentos-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.btn-home {
+  display: block;
+  margin: 30px auto;
+  padding: 12px 20px;
+  background-color: #28a745;
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  width: 150px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.btn-home:hover {
+  background-color: #218838;
+}

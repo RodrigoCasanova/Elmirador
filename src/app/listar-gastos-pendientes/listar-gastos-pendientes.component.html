@@ -1,0 +1,91 @@
+<div class="container mt-5 p-4 shadow-lg rounded bg-light text-center">
+    <!-- Título -->
+    <h2 class="mb-4 text-primary font-weight-bold">
+      🏢 Listado de Gastos Comunes Pendientes 🏢
+    </h2>
+  
+    <!-- Sección de filtros -->
+    <div class="filters bg-white rounded p-4 mb-4 shadow-sm mx-auto">
+      <div class="row justify-content-center">
+        <div class="col-md-4 mb-3">
+          <label for="mes" class="font-weight-bold">📅 Mes:</label>
+          <input
+            type="number"
+            id="mes"
+            [(ngModel)]="mes"
+            name="mes"
+            min="1"
+            max="12"
+            class="form-control text-center"
+            placeholder="Ej: 11"
+          />
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="anio" class="font-weight-bold">📆 Año:</label>
+          <input
+            type="number"
+            id="anio"
+            [(ngModel)]="anio"
+            name="anio"
+            min="2000"
+            class="form-control text-center"
+            placeholder="Ej: 2024"
+          />
+        </div>
+      </div>
+      <button
+        (click)="listarGastosPendientes()"
+        class="btn btn-primary btn-lg mt-3 w-50 shadow"
+      >
+        🔍 Listar Gastos
+      </button>
+    </div>
+  
+    <!-- Tabla de gastos pendientes -->
+    <div *ngIf="gastosPendientes && gastosPendientes.length > 0" class="table-responsive">
+      <table class="table table-bordered table-hover shadow-sm mx-auto">
+        <thead class="bg-primary text-white text-center">
+          <tr>
+            <th>Código Departamento</th>
+            <th>Mes</th>
+            <th>Año</th>
+            <th>Valor Pagado</th>
+            <th>Fecha de Pago</th>
+            <th>Atrasado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let gasto of gastosPendientes">
+            <td>{{ gasto.CodDepto }}</td>
+            <td>{{ gasto.Mes }}</td>
+            <td>{{ gasto.Anio }}</td>
+            <td>{{ gasto.ValorPagado | currency:'USD':'symbol' }}</td>
+            <td>{{ gasto.FechaPago || 'No pagado' }}</td>
+            <td>
+              <span
+                [ngClass]="{
+                  'badge badge-danger': gasto.Atrasado,
+                  'badge badge-success': !gasto.Atrasado
+                }"
+              >
+                {{ gasto.Atrasado ? 'Sí' : 'No' }}
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <!-- Mensaje cuando no hay datos -->
+    <div *ngIf="gastosPendientes && gastosPendientes.length === 0" class="text-center mt-4 alert alert-warning shadow-sm mx-auto">
+      <p class="mb-0">⚠️ No hay montos pendientes para este mes y año.</p>
+    </div>
+  
+    <!-- Botón para volver al inicio -->
+    <div class="text-center mt-4">
+      <a routerLink="/home" class="btn btn-home">
+        ⬅️ Volver al Inicio
+      </a>
+    </div>
+  </div>
+  
