@@ -1,12 +1,15 @@
-<div>
-  <div class="container">
-    <h2 class="page-title">Departamentos</h2>
+<div class="container">
+  <!-- Título de la página -->
+  <h2 class="page-title">Gestión de Departamentos</h2>
 
-    <!-- Botón para crear los departamentos -->
-    <button (click)="crearDepartamento()">Crear Departamentos</button>
+  <!-- Botón para crear departamentos -->
+  <div class="btn-wrapper">
+    <button (click)="crearDepartamento()" class="btn btn-primary">
+      <i class="fas fa-plus"></i> Crear Departamento
+    </button>
   </div>
 
-
+  <!-- Tabla de departamentos -->
   <div class="table-wrapper">
     <table class="departamentos-table">
       <thead>
@@ -15,13 +18,13 @@
           <th>Piso</th>
           <th>Número</th>
           <th>Arrendado</th>
-          <th>RutProp</th>
+          <th>Propietario</th>
           <th>Estado</th>
-          <th>RutArre</th>
-          <th>FechaIniC</th>
-          <th>FechaFinC</th>
-          <th>Observacion</th>
-          <th>NumHab</th>
+          <th>Arrendatario</th>
+          <th>Inicio Contrato</th>
+          <th>Fin Contrato</th>
+          <th>Observación</th>
+          <th>Habitaciones</th>
         </tr>
       </thead>
       <tbody>
@@ -29,7 +32,7 @@
           <td>{{ depto.CodDepto }}</td>
           <td>{{ depto.Piso }}</td>
           <td>{{ depto.Numero }}</td>
-          <td>{{ depto.Arrendado }}</td>
+          <td>{{ depto.Arrendado ? 'Sí' : 'No' }}</td>
           <td>{{ depto.RutProp }}</td>
           <td>{{ depto.Estado }}</td>
           <td>{{ depto.RutArre }}</td>
@@ -43,5 +46,9 @@
   </div>
 
   <!-- Botón para regresar al Home -->
-  <a routerLink="/home" class="btn-home">Ir al Home</a>
+  <div class="btn-wrapper">
+    <a routerLink="/home" class="btn btn-secondary">
+      <i class="fas fa-home"></i> Volver al Inicio
+    </a>
+  </div>
 </div>

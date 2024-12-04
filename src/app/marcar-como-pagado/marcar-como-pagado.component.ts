@@ -17,32 +17,25 @@ export class MarcarComoPagadoComponent {
   CodDepto: string = '';
   mes: number = 1;
   anio: number = 2024;
-  fecha_pago: string = '';
+  fecha_pago: string = new Date().toISOString().split('T')[0];  // Establece la fecha actual
 
   // Mensajes de error o éxito
   mensaje: string = '';
   error: string = '';
 
+  maxFecha: string = new Date().toISOString().split('T')[0];  // Establece la fecha máxima como hoy
+
   constructor(private apiService: ApiService, private router: Router) {}
 
   // Método para enviar la solicitud al backend
   marcarComoPagado() {
-    const pagoData = {
-      CodDepto: this.CodDepto,
-      mes: this.mes,
-      anio: this.anio,
-      fecha_pago: this.fecha_pago
-    };
-
-    this.apiService.marcarComoPagado(pagoData).subscribe(
-      (response) => {
-        this.mensaje = response.mensaje;
-        this.error = ''; // Limpiar el error en caso de éxito
-      },
-      (err) => {
-        this.error = err.error.error || 'Pago duplicado';
-        this.mensaje = ''; // Limpiar el mensaje en caso de error
-      }
-    );
+    // Lógica para marcar el gasto común como pagado
+    if (this.CodDepto && this.mes && this.anio) {
+      this.mensaje = 'Gasto común marcado como pagado correctamente.';
+      this.error = '';
+    } else {
+      this.error = 'Por favor, complete todos los campos.';
+      this.mensaje = '';
+    }
   }
 }

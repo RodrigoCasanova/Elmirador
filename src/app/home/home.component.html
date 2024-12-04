@@ -1,15 +1,20 @@
-<!-- home.component.html -->
+<div class="container">
+  <h1 class="display-4">Bienvenido a la Gestión de <span class="highlight">El Mirador</span></h1>
+  <p class="lead">Selecciona una opción para gestionar los aspectos del edificio:</p>
 
-<div class="container text-center">
-    <h1 class="display-4 mb-4">Bienvenido a la Gestión de El Mirador</h1>
-    <p class="lead mb-5">Selecciona una opción para gestionar los aspectos del edificio:</p>
-    
-    <!-- Contenedor para los botones -->
-    <div class="btn-group-vertical d-grid gap-3">
-      <a routerLink="/departamentos" class="btn btn-primary btn-lg">Departamentos</a>
-      <a routerLink="/gastos-comunes" class="btn btn-info btn-lg">Gastos Comunes</a>
-      <a routerLink="/marcar-como-pagado" class="btn btn-success btn-lg">Gestionar Pago</a>
-      <a routerLink="/listar-gastos-pendientes" class="btn btn-success btn-lg">Gastos Pendientes</a>
-    </div>
+  <!-- Contenedor para los botones -->
+  <div class="button-grid">
+    <a routerLink="/departamentos" class="btn btn-primary">
+      <i class="fas fa-building"></i> Departamentos
+    </a>
+    <a routerLink="/gastos-comunes" class="btn btn-info">
+      <i class="fas fa-wallet"></i> Gastos Comunes
+    </a>
+    <a routerLink="/marcar-como-pagado" class="btn btn-success">
+      <i class="fas fa-check-circle"></i> Gestionar Pago
+    </a>
+    <a routerLink="/listar-gastos-pendientes" class="btn btn-warning">
+      <i class="fas fa-clock"></i> Gastos Pendientes
+    </a>
   </div>
-  
+</div>
